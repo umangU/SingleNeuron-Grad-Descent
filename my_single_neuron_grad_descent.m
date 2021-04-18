@@ -1,15 +1,19 @@
-% Load dataset
+% Load A3 dataset
 load A3.dat
+
 X = [ones(8,1) A3(:,1:2)];
 t = A3(:,3);
+
 % Plot data
 figure(1); clf
 plot(X(1:4,2),X(1:4,3),'ks'); hold on
 plot(X(5:8,2),X(5:8,3),'k*')
 xlim([0 10]); ylim([0 10]); axis square
 xlabel('x1'); ylabel('x2')
+
 % Initialize weights and bias
 W = [-3 1 2];
+
 % Loop T times
 T = 50000;
 eta = 0.01;
@@ -19,6 +23,7 @@ for i = 1:T
 grad = -(t' - y(W))*X + alpha*W;
 W = W - eta*grad;
 end
+
 % Plot learned function
 figure(1); hold on
 learned_y = @(X) sigmf(W*X',[1 0]);
