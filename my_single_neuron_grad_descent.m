@@ -1,6 +1,7 @@
 % Load A3 dataset
 load A3.dat
 
+% Initializing X values
 X = [ones(8,1) A3(:,1:2)];
 t = A3(:,3);
 
