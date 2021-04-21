@@ -25,7 +25,7 @@ grad = -(t' - y(W))*X + alpha*W;
 W = W - eta*grad;
 end
 
-% Plot learned function
+% Contour plot learned
 figure(1); hold on
 learned_y = @(X) sigmf(W*X',[1 0]);
 x1 = linspace(0,10);
